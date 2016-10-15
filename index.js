@@ -35,6 +35,8 @@ app.listen(app.get('port'), function() {
     console.log('running on port', app.get('port'))
 })
 
+const token = process.env.PAGE_ACCESS_TOKEN
+
 function sendTextMessage(sender, text) {
     let messageData = { text:text }
     request({
