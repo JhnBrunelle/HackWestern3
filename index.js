@@ -92,7 +92,7 @@ function sendTextMessage(sender, text) {
     })
 }
 
-function sendImage(sender, text) {
+function sendImage(sender, imgURL) {
     //let messageData={text:text};
     request({
         url: 'https://graph.facebook.com/v2.6/me/messages',
@@ -104,7 +104,7 @@ function sendImage(sender, text) {
             "attachment":{
                 "type":"image",
                     "payload":{
-                        "url":"https://petersapparel.parseapp.com/img/shirt.png",
+                        "url":imgURL,
                         "is_reusable":true
                     }
             }
