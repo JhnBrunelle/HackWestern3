@@ -31,6 +31,5 @@ module.exports = {
 
 
 
-var lnk = http://www.youtube-mp3.org/.getElementById("dl-link")
 
 
