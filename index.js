@@ -36,7 +36,7 @@ app.post('/webhook/', function (req, res) {
             sendTextMessage(sender, "Text received, echo: " + text)
         }
         else{
-            stu.sendImage(sender, "https://pbs.twimg.com/profile_images/378800000822867536/3f5a00acf72df93528b6bb7cd0a4fd0c.jpeg")
+            sendImage(sender, "https://pbs.twimg.com/profile_images/378800000822867536/3f5a00acf72df93528b6bb7cd0a4fd0c.jpeg")
         }
     }
     res.sendStatus(200)
@@ -67,3 +67,20 @@ function sendTextMessage(sender, text) {
         }
     })
 }
+
+function sendImage(sender, text) {
+    let messageData={text:text};
+    request({
+        url: 'https://graph.facebook.com/v2.6/me/messages',
+        qs: {access_token:token},
+        method: 'POST',
+        json: {
+            recipient: {id:sender},
+            message: messageData,
+        }
+    }, function(error, response, body){
+        if(error){
+            console.log('Error sending messages: ', error);
+        }
+        else if(response.body.error){
+            console.log('Error: ', response.body.error);
