@@ -44,6 +44,18 @@ app.post('/webhook/', function (req, res) {
             let text = andrew.flipCoin();
             sendTextMessage(sender, text);
         }
+        else if(event.message && event.message.text === "Yes or No?"||event.message.text === "yes or no?"){
+            let text = stu.yesNoGen();
+            sendTextMessage(sender, text);
+        }
+        else if(event.message && event.message.text === "Wall-e"){
+            let text =stu.gotoWalle();
+            sendTextMessage(sender, text);
+        }
+        else if(event.message && event.message.text === "MP3"){
+            let text =stu.returnMP3();
+            sendTextMessage(sender, text);
+        }
         else if (event.message && event.message.text) {
             let text = stu.foo();
             sendTextMessage(sender, "Text received, echo: " + text)
