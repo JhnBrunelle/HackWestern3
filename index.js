@@ -66,6 +66,11 @@ app.post('/webhook/', function (req, res) {
             let text=stu.youtubeSearch(query);
             sendTextMessage(sender, text);
         }
+        else if(event.message && event.message.text.substring(0,7) === "search:"){
+            let query=event.message.text.substring(7, event.message.text.length);
+            let text=stu.googleSearch(query);
+            sendMessageText(sender, text);
+        }
         else if(event.message && event.message.text.substring(0, 4).toLowerCase() === "calc"){
             sendTextMessage(sender, john.calculator(event.message.text.slice(5)));
         }
