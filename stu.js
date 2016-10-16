@@ -4,7 +4,7 @@
 // These functions CAN be called within index.js
 module.exports = {
   foo: function () {
-    // whatever
+    // something else
   },
   bar: function () {
     // whatever
