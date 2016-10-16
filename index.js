@@ -36,7 +36,7 @@ app.post('/webhook/', function (req, res) {
         if(event.message && event.message.text.toLowerCase === "doge"){
             sendImage(sender, "https://pbs.twimg.com/profile_images/378800000822867536/3f5a00acf72df93528b6bb7cd0a4fd0c.jpeg")
         }
-        else if(event.message && event.message.text.toLowerCaser() ==="help"){
+        else if(event.message && event.message.text.toLowerCase() ==="help"){
             let text = john.help();
             sendTextMessage(sender, text);
         }
