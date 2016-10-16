@@ -28,15 +28,9 @@ app.post('/webhook/', function (req, res) {
         let sender = event.sender.id;
         if (event.message && event.message.text) {
             let text = event.message.text
-            if (answerMathQuestion(text) != 0)
-            {
-                let result = answerMathQuestion(text);
-                sendTextMessage(sender, "= " + result)
-            }
-            else
-            {
-                sendTextMessage(sender, "Text received, echo: " + text.substring(0, 200))
-            }
+            let result = answerMathQuestion(text);
+             sendTextMessage(sender, "= " + result)
+        
         }
     }
     res.sendStatus(200)
