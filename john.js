@@ -9,9 +9,13 @@ module.exports = {
   help: function() {
   	var helpMenu =  "Here is a list of commands:" +
   		   			"\n------" +
-  		   			"\n coin- Returns heads or tails" +
-  		   			"\ndoge - To view a doge!" + 
-  		   			"\ntest - To repeat whats said"
+  		   			"\n coin - Returns heads or tails" +
+  		   			"\n doge - To view a doge!" + 
+  		   			"\n emoji - Random Emojis" +
+  		   			"\n yes or no? - Answers Yes or No Question" +
+  		   			"\n wall-e - opens Wall-e Graph" +
+  		   			"\n mp3 - To repeat whats said" +
+  		   			"\n calc - Followed by expression, will return result"
    return helpMenu
   },
   emoji: function(){

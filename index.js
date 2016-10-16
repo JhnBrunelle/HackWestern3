@@ -60,7 +60,6 @@ app.post('/webhook/', function (req, res) {
             let text =stu.returnMP3();
             sendTextMessage(sender, text);
         }
-<<<<<<< HEAD
         else if(event.message && event.message.text.substring(0,6) === "video:"){
             var query="";
             if(event.message.text[6] ===" "){
@@ -72,12 +71,8 @@ app.post('/webhook/', function (req, res) {
             let text=stu.youtubeSearch(query);
             sendTextMessage(sender, text);
         }
-        else if(event.message && event.message.text.substring(0, 3) === "calc"){
-            sendTextMessage(sender, john.calculator(event.message.text.splice(0,4)));
-=======
         else if(event.message && event.message.text.substring(0, 4).toLowerCase() === "calc"){
             sendTextMessage(sender, john.calculator(event.message.text.slice(5)));
->>>>>>> origin/master
         }
         else if (event.message && event.message.text) {
             console.log("messageReceived: " +  event.message.text)
