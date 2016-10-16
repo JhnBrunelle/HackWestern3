@@ -100,15 +100,15 @@ function sendImage(sender, text) {
         method: 'POST',
         json: {
             recipient: {id:sender},
-            message: {
-                "attachment":{
+            "message":{
+            "attachment":{
                 "type":"image",
                     "payload":{
-                        "url":text,
+                        "url":"https://petersapparel.parseapp.com/img/shirt.png",
                         "is_reusable":true
-                }
+                    }
             }
-        }
+        }     
     }, function(error, response, body) {
         if (error) {
             console.log('Error sending messages: ', error);
