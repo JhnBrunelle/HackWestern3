@@ -8,9 +8,9 @@ const express = require('express')
 const bodyParser = require('body-parser')
 const request = require('request')
 const app = express()
-const tools = require('./stu');
-const tools = require('./john');
-const tools = require('./andrew');
+const stu = require('./stu');
+const john = require('./john');
+const andrew = require('./andrew');
 
 app.set('port', (process.env.PORT || 5000))
 
