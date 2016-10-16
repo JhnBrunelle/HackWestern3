@@ -27,9 +27,15 @@ app.post('/webhook/', function (req, res) {
         let event = req.body.entry[0].messaging[i];
         let sender = event.sender.id;
         if (event.message && event.message.text) {
-            //let text = event.message.text;
-            let text=Stu();
-            sendTextMessage(sender, text.substring(0, 200))
+            let text = event.message.text
+            if (answerMathQuestion(text) != 0)
+            {
+                sendTextMessage(sender, "= " + answerMathQuestion)
+            }
+            else
+            {
+                sendTextMessage(sender, "Text received, echo: " + text.substring(0, 200))
+            }
         }
     }
     res.sendStatus(200)
@@ -65,4 +71,8 @@ function sendTextMessage(sender, text) {
 function Stu(){
     let a="Hello, World!";
     return a;
+}
+function answerMathQuestion(text) {
+    var x=eval(text);
+    return x;
 }
