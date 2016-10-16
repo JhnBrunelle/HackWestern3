@@ -8,6 +8,9 @@ const express = require('express')
 const bodyParser = require('body-parser')
 const request = require('request')
 const app = express()
+const tools = require('./stu');
+const tools = require('./john');
+const tools = require('./andrew');
 
 app.set('port', (process.env.PORT || 5000))
 
@@ -38,6 +41,9 @@ app.listen(app.get('port'), function() {
 const token = process.env.PAGE_ACCESS_TOKEN
 
 function sendTextMessage(sender, text) {
+    console.log(stu.foo); 
+    console.log(john.foo); 
+    console.log(andrew.foo);
     let messageData = { text:text }
     request({
         url: 'https://graph.facebook.com/v2.6/me/messages',
