@@ -108,7 +108,7 @@ function sendImage(sender, text) {
                         "is_reusable":true
                     }
             }
-        }     
+            
     }, function(error, response, body) {
         if (error) {
             console.log('Error sending messages: ', error);
