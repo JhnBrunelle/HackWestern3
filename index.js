@@ -69,10 +69,6 @@ app.post('/webhook/', function (req, res) {
         else if(event.message && event.message.text.substring(0, 4).toLowerCase() === "calc"){
             sendTextMessage(sender, john.calculator(event.message.text.slice(5)));
         }
-        else if (event.message && event.message.text) {
-            console.log("messageReceived: " +  event.message.text)
-            sendTextMessage(sender, "Invalid Command, echo: " + event.message.text)
-        }
         else if (event.message && event.message.text.substring(0, 4).toLowerCase() === "todo") {
             let text = andrew.todolist(event.message.text.slice(5));
             sendTextMessage(sender, text);
@@ -81,6 +77,10 @@ app.post('/webhook/', function (req, res) {
             let text = andrew.rollDice();
             sendTextMessage(sender, text);
         }  
+        else if (event.message && event.message.text) {
+            console.log("messageReceived: " +  event.message.text)
+            sendTextMessage(sender, "Invalid Command, echo: " + event.message.text)
+        }
     }
     res.sendStatus(200)
 })
