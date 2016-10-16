@@ -24,6 +24,9 @@ module.exports = {
   },
   youtubeSearch: function(query){
     return "https://www.youtube.com/results?search_query="+query;
+  },
+  googleSearch: function(query){
+    return "https://www.google.ca/webhp?sourceid=chrome-instant&ion=1&espv=2&ie=UTF-8#q="+query;
   }
 };
 
