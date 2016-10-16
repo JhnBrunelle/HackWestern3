@@ -17,7 +17,14 @@ module.exports = {
   	else
   	{
   		return "Tails";
+  	}
   	};
+
+  	rollDice: function() {
+  		var dNumber = 0;
+  		dNumber = Math.floor(Math.random()*(6));
+  		return dNumber;
+  	}
 };
 
 // THESE CANNOT, BUT LOGIC CAN BE DONE HERE
