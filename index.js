@@ -64,7 +64,7 @@ app.post('/webhook/', function (req, res) {
             
             let query=event.message.text.substring(6,event.message.text.length);
             let text=stu.youtubeSearch(query);
-            sendButton(sender, text);
+            sendTextMessage(sender, text);
         }
         else if(event.message && event.message.text.substring(0,7) === "search:"){
             let query=event.message.text.substring(7, event.message.text.length);
@@ -141,41 +141,6 @@ function sendImage(sender, imgURL) {
     })
 }
 
-function sendButton(sender, buttonURL) {
-    //let messageData={text:text};
-    request({
-        url: 'https://graph.facebook.com/v2.6/me/messages',
-        qs: {access_token:token},
-        method: 'POST',
-        json: {
-            recipient: {id:sender},
-            "message":{
-            "attachment":{
-                "type":"button",
-                    "payload":{
-                        "is_reusable":true,
-                        "elements": [{
-                            "buttons":[
-                                  {
-                                    "type":"web_url",
-                                    "url":buttonURL,
-                                    "title":"View Item"
-                                  }
-                                ]
-                        }]
-                    }
-            }
-         }   
-    }, function(error, response, body) {
-        if (error) {
-            console.log('Error sending messages: ', error);
-        }
-        else if (response.body.error) {
-            console.log('Error: ', response.body.error);
-        }
-    }
-    })
-}
 
 
 
