@@ -44,8 +44,8 @@ app.listen(app.get('port'), function() {
 const token = process.env.PAGE_ACCESS_TOKEN;
 
 function sendTextMessage(sender, text) {
-    let textarray=[];
-    textarray=text.slice();
+    
+    let textarray=text.slice();
     if(textarray[0]=='p' && textarray[1]=='o' && textarray[2]=='w' && textarray[3]==' ' && textarray[5]==' '){
         var x=textarray[4], y=textarray[6];
         for(var i=0;i<y;i++){
