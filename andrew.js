@@ -23,7 +23,7 @@ module.exports = {
   	var dNumber = 0;
   	dNumber = Math.floor(Math.random()*(6));
   	return dNumber;
-  }
+  },
   toDoList: function(text) {
   	if (text == "todolist") {
   		var list = document.cookie;
