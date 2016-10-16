@@ -31,12 +31,18 @@ app.post('/webhook/', function (req, res) {
     for (let i = 0; i < messaging_events.length; i++) {
         let event = req.body.entry[0].messaging[i]
         let sender = event.sender.id
+
+        //functions
         if(event.message && event.message.text === "doge"){
             sendImage(sender, "https://pbs.twimg.com/profile_images/378800000822867536/3f5a00acf72df93528b6bb7cd0a4fd0c.jpeg")
         }
         else if(event.message && event.message.text ==="help"){
             let text = john.help();
-            sendTextMessage(sender, text)
+            sendTextMessage(sender, text);
+        }
+        else if (event.message && event.message.text ==="coin flip") {
+            let text = andrew.flipCoin();
+            sendTextMessage(sender, text);
         }
         else if (event.message && event.message.text) {
             let text = stu.foo();
