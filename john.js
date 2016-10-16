@@ -10,7 +10,7 @@ module.exports = {
     // whatever
   },
   help: function() {
-  	return "Here is a list of commands: \ndoge - To view a doge! \ntest - To repeat whats said"
+  	return "Here is a list of commands: \n------\ncoin- Returns heads or tails \ndoge - To view a doge! \ntest - To repeat whats said"
   }
 };
 
