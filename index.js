@@ -151,7 +151,7 @@ function sendButton(sender, buttonURL) {
             recipient: {id:sender},
             "message":{
             "attachment":{
-                "type":"image",
+                "type":"template",
                     "payload":{
                         "is_reusable":true,
                         "elements": [{
