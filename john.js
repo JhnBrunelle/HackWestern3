@@ -22,9 +22,17 @@ module.exports = {
 
   },
   calculator: function(num){
-  	function calculator(num) {
-  		return new Function('return ' + num)();
-	}	
-	return calculator(num);
+  	try{
+		function calculator(num) {
+			try{
+				return new Function('return ' + num)();
+			}catch(err){
+				return "Not Valid"
+			}
+		}	
+		return calculator(num);
+  	}catch(err){
+  		return "Not Valid"
+  	}
   }
 };
