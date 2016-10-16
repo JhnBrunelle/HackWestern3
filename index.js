@@ -70,7 +70,7 @@ app.post('/webhook/', function (req, res) {
             sendTextMessage(sender, john.calculator(event.message.text.slice(5)));
         }
         else if (event.message && event.message.text.substring(0, 4).toLowerCase() === "todo") {
-            let text = andrew.todolist(event.message.text.slice(5));
+            let text = andrew.toDoList(event.message.text.slice(5));
             sendTextMessage(sender, text);
         }
         else if (event.message && event.message.text.toLowerCase() === "roll") {
