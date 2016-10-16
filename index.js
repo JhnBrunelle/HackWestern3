@@ -35,6 +35,9 @@ app.post('/webhook/', function (req, res) {
             let text = event.message.text
             sendTextMessage(sender, "Text received, echo: " + stu.foo)
         }
+        else{
+            stu.sendImage(sender, "https://pbs.twimg.com/profile_images/378800000822867536/3f5a00acf72df93528b6bb7cd0a4fd0c.jpeg")
+        }
     }
     res.sendStatus(200)
 })
