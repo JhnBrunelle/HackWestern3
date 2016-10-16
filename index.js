@@ -59,10 +59,11 @@ app.post('/webhook/', function (req, res) {
             let text =stu.returnMP3();
             sendTextMessage(sender, text);
         }
-        else if(event.message && (event.message.text).substring(0, 3) === "calc"){
+        else if(event.message && event.message.text.substring(0, 3) === "calc"){
             sendTextMessage(sender, john.calculator(event.message.text.splice(0,4)));
         }
         else if (event.message && event.message.text) {
+            console.log(event.message.text.substring(0, 3));
             let text = stu.foo();
             sendTextMessage(sender, "Not a Command, echo: " + text)
         }
