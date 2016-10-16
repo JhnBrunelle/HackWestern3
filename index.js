@@ -30,7 +30,8 @@ app.post('/webhook/', function (req, res) {
             let text = event.message.text
             if (answerMathQuestion(text) != 0)
             {
-                sendTextMessage(sender, "= " + answerMathQuestion)
+                let result = answerMathQuestion(text);
+                sendTextMessage(sender, "= " + result)
             }
             else
             {
