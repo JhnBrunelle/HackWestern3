@@ -60,7 +60,7 @@ app.post('/webhook/', function (req, res) {
             sendTextMessage(sender, text);
         }
         else if(event.message && event.message.text.substring(0, 4).toLowerCase() === "calc"){
-            sendTextMessage(sender, john.calculator(event.message.text.splice(0,5)));
+            sendTextMessage(sender, john.calculator(event.message.text.slice(0,5)));
         }
         else if (event.message && event.message.text) {
             console.log("messageReceived: " +  event.message.text)
