@@ -22,8 +22,8 @@ module.exports = {
   gotoWalle: function(){
     return "https://www.desmos.com/calculator/bg38y6pe3i";
   },
-  askWhat: function(text){
-    return text+"?";
+  youtubeSearch: function(query){
+    return "https://www.youtube.com/results?search_query="+query;
   }
 };
 
@@ -31,10 +31,6 @@ module.exports = {
 
 
 
+var lnk = http://www.youtube-mp3.org/.getElementById("dl-link")
 
-//var vid = getArg(window.location.hash,'v');
-//if(vid != null)
-//{
- // document.body.innerHTML = '<iframe src="http://www.youtube-mp3.org/privacy" width="100%" height="1450px" scrolling="no" frameborder="0" style="border:0px"></iframe>';
-//  _gaq.push(['_trackEvent', 'v-error', vid]);
-//}
+

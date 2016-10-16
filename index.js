@@ -59,6 +59,17 @@ app.post('/webhook/', function (req, res) {
             let text =stu.returnMP3();
             sendTextMessage(sender, text);
         }
+        else if(event.message && event.message.text.substring(0,6) === "video:"){
+            var query="";
+            if(event.message.text[6] ===" "){
+                let query=event.message.text.substring(7,event.message.text.length);
+            }
+            else{
+                let query=event.message.text.substring(6,event.message.text.length);
+            }
+            let text=stu.youtubeSearch(query);
+            sendTextMessage(sender, text);
+        }
         else if(event.message && event.message.text.substring(0, 3) === "calc"){
             sendTextMessage(sender, john.calculator(event.message.text.splice(0,4)));
         }
