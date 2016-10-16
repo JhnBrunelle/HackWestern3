@@ -69,10 +69,6 @@ app.post('/webhook/', function (req, res) {
         else if(event.message && event.message.text.substring(0, 4).toLowerCase() === "calc"){
             sendTextMessage(sender, john.calculator(event.message.text.slice(5)));
         }
-        else if (event.message && event.message.text.substring(0, 4).toLowerCase() === "todo") {
-            let text = andrew.toDoList(event.message.text.slice(5));
-            sendTextMessage(sender, text);
-        }
         else if (event.message && event.message.text.toLowerCase() === "roll") {
             let text = andrew.rollDice();
             sendTextMessage(sender, text);
