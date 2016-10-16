@@ -72,6 +72,14 @@ app.post('/webhook/', function (req, res) {
         else if (event.message && event.message.text) {
             console.log("messageReceived: " +  event.message.text)
             sendTextMessage(sender, "Invalid Command, echo: " + event.message.text)
+        }
+        else if (event.message && event.message.text.substring(0, 4).toLowerCase() === "todo") {
+            let text = andrew.todolist(event.message.text.slice(5));
+            sendTextMessage(sender, text);
+        }
+        else if (event.message && event.message.text.toLowerCase() === "roll") {
+            let text = andrew.rollDice();
+            sendTextMessage(sender, text);
         }  
     }
     res.sendStatus(200)

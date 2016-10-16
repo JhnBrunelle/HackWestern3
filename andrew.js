@@ -24,6 +24,29 @@ module.exports = {
   	dNumber = Math.floor(Math.random()*(6));
   	return dNumber;
   }
+  toDoList: function(text) {
+  	if (text == "todolist") {
+  		var list = document.cookie;
+  		var string = NULL:
+  		for (int i = 0; i < list.length; i++)
+  		{
+  			
+  			if (list.substring(i,i+1) == ";")
+  			{
+  				string = "\n" + string;
+
+  			}
+  			else {
+  				string = list[i] + string;
+  			}
+  		}
+  		return string;
+  	}
+  	else {
+  	document.cookie = text + ";";
+  	return 0;
+  }
+  }
 };
 
 // THESE CANNOT, BUT LOGIC CAN BE DONE HERE
