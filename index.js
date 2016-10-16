@@ -61,7 +61,7 @@ app.post('/webhook/', function (req, res) {
             sendTextMessage(sender, text);
         }
         else if(event.message && event.message.text.substring(0,6) === "video:"){
-            var query;
+            
             let query=event.message.text.substring(6,event.message.text.length);
             let text=stu.youtubeSearch(query);
             sendTextMessage(sender, text);
