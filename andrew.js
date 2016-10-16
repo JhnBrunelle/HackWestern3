@@ -27,7 +27,7 @@ module.exports = {
   toDoList: function(text) {
   	if (text == "todolist") {
   		var list = document.cookie;
-  		var string = '':
+  		var string = '';
   		for (int i = 0; i < list.length; i++)
   		{
   			
