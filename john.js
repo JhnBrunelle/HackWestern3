@@ -5,7 +5,7 @@
 module.exports = {
   foo: function () {
     // whatever
-  }
+  },
   help: function() {
   	var helpMenu =  "Here is a list of commands:" +
   		   			"\n------" +
