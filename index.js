@@ -44,7 +44,7 @@ app.post('/webhook/', function (req, res) {
             let text = andrew.flipCoin();
             sendTextMessage(sender, text);
         }
-        else if(event.message && event.message.text === "Yes or No?"||event.message.text === "yes or no?"){
+        else if(event.message && (event.message.text === "Yes or No?"|| event.message.text === "yes or no?")){
             let text = stu.yesNoGen();
             sendTextMessage(sender, text);
         }
