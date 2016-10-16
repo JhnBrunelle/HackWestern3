@@ -1,6 +1,4 @@
-/**
- * Created by john on 2016-10-15.
- */
+
 
 'use strict'//Do it this way ONLY
 
