@@ -33,38 +33,40 @@ app.post('/webhook/', function (req, res) {
         let sender = event.sender.id
 
         //functions
-        if(event.message && event.message.text.toLowerCase === "doge"){
-            sendImage(sender, "https://pbs.twimg.com/profile_images/378800000822867536/3f5a00acf72df93528b6bb7cd0a4fd0c.jpeg")
-        }
-        else if(event.message && event.message.text.toLowerCase() ==="help"){
-            let text = john.help();
-            sendTextMessage(sender, text);
-        }
-        else if (event.message && event.message.text.toLowerCase() ==="coin flip") {
-            let text = andrew.flipCoin();
-            sendTextMessage(sender, text);
-        }
-        else if (event.message && event.message.text.toLowerCase() ==="emoji") {
-            sendTextMessage(sender, john.emoji());
-        }
-        else if(event.message && (event.message.text.toLowerCase() === "yes or no?")){
-            let text = stu.yesNoGen();
-            sendTextMessage(sender, text);
-        }
-        else if(event.message && event.message.text.toLowerCase() === "wall-e"){
-            let text =stu.gotoWalle();
-            sendTextMessage(sender, text);
-        }
-        else if(event.message && event.message.text.toLowerCase() === "mp3"){
-            let text =stu.returnMP3();
-            sendTextMessage(sender, text);
-        }
-        else if(event.message && event.message.text.substring(0, 4).toLowerCase() === "calc"){
-            sendTextMessage(sender, john.calculator(event.message.text.slice(5)));
-        }
-        else if (event.message && event.message.text) {
-            console.log("messageReceived: " +  event.message.text)
-            sendTextMessage(sender, "Invalid Command, echo: " + event.message.text)
+        if(event.message.text){
+            if(event.message && event.message.text.toLowerCase === "doge"){
+                sendImage(sender, "https://pbs.twimg.com/profile_images/378800000822867536/3f5a00acf72df93528b6bb7cd0a4fd0c.jpeg")
+            }
+            else if(event.message && event.message.text.toLowerCase() ==="help"){
+                let text = john.help();
+                sendTextMessage(sender, text);
+            }
+            else if (event.message && event.message.text.toLowerCase() ==="coin flip") {
+                let text = andrew.flipCoin();
+                sendTextMessage(sender, text);
+            }
+            else if (event.message && event.message.text.toLowerCase() ==="emoji") {
+                sendTextMessage(sender, john.emoji());
+            }
+            else if(event.message && (event.message.text.toLowerCase() === "yes or no?")){
+                let text = stu.yesNoGen();
+                sendTextMessage(sender, text);
+            }
+            else if(event.message && event.message.text.toLowerCase() === "wall-e"){
+                let text =stu.gotoWalle();
+                sendTextMessage(sender, text);
+            }
+            else if(event.message && event.message.text.toLowerCase() === "mp3"){
+                let text =stu.returnMP3();
+                sendTextMessage(sender, text);
+            }
+            else if(event.message && event.message.text.substring(0, 4).toLowerCase() === "calc"){
+                sendTextMessage(sender, john.calculator(event.message.text.slice(5)));
+            }
+            else if (event.message && event.message.text) {
+                console.log("messageReceived: " +  event.message.text)
+                sendTextMessage(sender, "Invalid Command, echo: " + event.message.text)
+            }
         }
 
     }
