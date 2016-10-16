@@ -29,7 +29,8 @@ app.post('/webhook/', function (req, res) {
         let event = req.body.entry[0].messaging[i];
         let sender = event.sender.id;
         if (event.message && event.message.text) {
-            let text = "Hello, world!";
+            //let text = event.message.text;
+            let text=Stu();
             sendTextMessage(sender, text.substring(0, 200))
         }
     }
@@ -63,3 +64,7 @@ function sendTextMessage(sender, text) {
     })
 }
 
+function Stu(){
+    let a="Hello, World!";
+    return a;
+}
