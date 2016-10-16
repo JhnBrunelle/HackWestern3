@@ -159,8 +159,7 @@ function sendButton(sender, buttonURL) {
                                   {
                                     "type":"web_url",
                                     "url":buttonURL,
-                                    "title":"View Item",
-                                    "webview_height_ratio": "compact"
+                                    "title":"View Item"
                                   }
                                 ]
                         }]
