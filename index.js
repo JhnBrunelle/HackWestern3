@@ -33,31 +33,34 @@ app.post('/webhook/', function (req, res) {
         let sender = event.sender.id
 
         //functions
-        if(event.message && event.message.text === "doge"){
+        if(event.message && event.message.text.toLowerCase === "doge"){
             sendImage(sender, "https://pbs.twimg.com/profile_images/378800000822867536/3f5a00acf72df93528b6bb7cd0a4fd0c.jpeg")
         }
-        else if(event.message && event.message.text ==="help"){
+        else if(event.message && event.message.text.toLowerCaser() ==="help"){
             let text = john.help();
             sendTextMessage(sender, text);
         }
-        else if (event.message && event.message.text ==="coin flip") {
+        else if (event.message && event.message.text.toLowerCase() ==="coin flip") {
             let text = andrew.flipCoin();
             sendTextMessage(sender, text);
         }
-        else if (event.message && event.message.text ==="emoji") {
+        else if (event.message && event.message.text.toLowerCase() ==="emoji") {
             sendTextMessage(sender, john.emoji());
         }
-        else if(event.message && (event.message.text === "Yes or No?"|| event.message.text === "yes or no?")){
+        else if(event.message && (event.message.text.toLowerCase() === "yes or no?")){
             let text = stu.yesNoGen();
             sendTextMessage(sender, text);
         }
-        else if(event.message && event.message.text === "Wall-e"){
+        else if(event.message && event.message.text.toLowerCase() === "wall-e"){
             let text =stu.gotoWalle();
             sendTextMessage(sender, text);
         }
-        else if(event.message && event.message.text === "MP3"){
+        else if(event.message && event.message.text.toLowerCase() === "mp3"){
             let text =stu.returnMP3();
             sendTextMessage(sender, text);
+        }
+        else if(event.message && event.message.text.substring(0, 3).toLowerCase() === 'calc'){
+            sendTextMessage(sender, john.calculator(event.message.text.splice(0,4)));
         }
         else if (event.message && event.message.text) {
             let text = stu.foo();

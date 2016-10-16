@@ -20,5 +20,11 @@ module.exports = {
 
   	return emojis[genNum]
 
+  },
+  calculator: function(num){
+  	function calculator(num) {
+  		return new Function('return ' + num)();
+	}	
+	return calculator(num);
   }
 };
