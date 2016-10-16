@@ -17,8 +17,8 @@ module.exports = {
   emoji: function(){
   	var genNum = Math.floor(Math.random() * (6));
   	var emojis = [":)",":D",":putnam:",":poop:","(^^^)",":|]"];
-  	console.log(emojis[genNum]);
-  	return emojis.genNum;
+
+  	return emojis[genNum]
 
   }
 };
