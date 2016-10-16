@@ -29,8 +29,8 @@ app.post('/webhook/', function (req, res) {
         let event = req.body.entry[0].messaging[i];
         let sender = event.sender.id;
         if (event.message && event.message.text) {
-            let text = event.message.text;
-            sendTextMessage(sender, "Text received, echo: " + text.substring(0, 200))
+            let text = "Hello, world!";
+            sendTextMessage(sender, text.substring(0, 200))
         }
     }
     res.sendStatus(200)
@@ -44,8 +44,6 @@ app.listen(app.get('port'), function() {
 const token = process.env.PAGE_ACCESS_TOKEN;
 
 function sendTextMessage(sender, text) {
-
-    text="Hello world.";
 
     let messageData = { text:text };
     request({
