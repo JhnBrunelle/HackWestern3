@@ -93,14 +93,20 @@ function sendTextMessage(sender, text) {
 }
 
 function sendImage(sender, text) {
-    let messageData={text:text};
+    //let messageData={text:text};
     request({
         url: 'https://graph.facebook.com/v2.6/me/messages',
         qs: {access_token:token},
         method: 'POST',
         json: {
             recipient: {id:sender},
-            message: messageData,
+            message: "attachment":{
+                "type":"image",
+                    "payload":{
+                        "url":text,
+                        "is_reusable":true
+                 }
+            }
         }
     }, function(error, response, body) {
         if (error) {
