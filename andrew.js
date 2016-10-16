@@ -7,7 +7,7 @@ module.exports = {
     return "Connected"
   },
   flipCoin: function () {
-  	let rNumber = 0;
+  	var rNumber = 0;
   	rNumber = Math.floor(Math.random() * (2));
 
   	if (rNumber == 0)
