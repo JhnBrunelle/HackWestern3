@@ -8,6 +8,11 @@ module.exports = {
   },
   bar: function () {
     // whatever
+  },
+  help: function() {
+  	return "Here's a list of commands:
+  				\ndoge - To view a doge! 
+  				\ntest - To repeat whats said"
   }
 };
 

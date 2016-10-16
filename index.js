@@ -38,10 +38,15 @@ app.post('/webhook/', function (req, res) {
             let text = stu.foo();
             sendTextMessage(sender, "Text received, echo: " + text)
         }
+        else if(event.message && event.message.text ==="help"){
+            let text = john.help();
+            sendTextMessage(sender, text)
+        }
 
     }
     res.sendStatus(200)
 })
+
 
 // Spin up the server
 app.listen(app.get('port'), function() {
