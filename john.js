@@ -17,7 +17,7 @@ module.exports = {
   		   			"\n mp3 - To repeat whats said" +
   		   			"\n calc - Followed by expression, will return result"+
 					"\n video:'searchKey' to search Youtube"+
-					"\n search:'searchKey' to search Google"+
+					"\n search:'searchKey' to search Google"
    return helpMenu
   },
   emoji: function(){
