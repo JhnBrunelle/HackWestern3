@@ -32,7 +32,7 @@ app.post('/webhook/', function (req, res) {
         let event = req.body.entry[0].messaging[i]
         let sender = event.sender.id
 
-        if(event.message !== 'undefined'){
+        if(event.message.text.length !== 0){
             //functions
         console.log(event.message.type);
         if(event.message && event.message.text.toLowerCase() === "doge"){
