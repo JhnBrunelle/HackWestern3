@@ -28,11 +28,8 @@ module.exports = {
   	if (text == "todolist") {
   		var list = document.cookie;
   		var string = '';
-  		for (int i = 0; i < list.length; i++)
-  		{
-  			
-  			if (list.substring(i,i+1) == ";")
-  			{
+  		for (var i = 0; i < list.length; i++) {
+  			if (list.substring(i,i+1) === ";"){
   				string = "\n" + string;
 
   			}
