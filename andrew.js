@@ -17,7 +17,7 @@ module.exports = {
   	else
   	{
   		return "Tails";
-  	}
+  	};
 };
 
 // THESE CANNOT, BUT LOGIC CAN BE DONE HERE
